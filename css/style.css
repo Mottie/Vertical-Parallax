@@ -1,0 +1,40 @@
+body {background: #333; color: #ddd;}
+a:link { color: #ddd; }
+a:hover { text-decoration: underline; }
+a:visited,a:active { color: #999; }
+
+/* Tiled background image */
+body {
+ margin: 0;
+ padding: 0;
+ /* Use height of header image for top position */
+ background: #000 url(../images/bgtile.jpg) left 1080px repeat-y;
+}
+/* Top background image (1920x1200) */
+#wrapper {
+ position: relative;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background: url(../images/bg1.jpg) center top repeat-x;
+ z-index: 100;
+}
+/* Page Title image */
+#header {
+ height: 350px;
+ background: url(../images/title.png) center 40px no-repeat;
+}
+/* Content Block with 55% opacity background image */
+.block {
+ width: 800px;
+ height: 500px;
+ margin: 20px auto;
+ border: #333 1px solid;
+ padding: 20px;
+ background: url(../images/bg-black-55.png);
+}
+.block h3 {
+ font-family: 'Arial Black', Gadget, sans-serif;
+ font-size: 130%;
+}

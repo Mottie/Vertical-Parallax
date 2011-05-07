@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vertical Parallax</title>
+
+	<!-- jQuery (required) -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+
+	<!-- style sheet -->
+	<link rel="stylesheet" href="css/style.css">
+	<script>
+		$(function(){
+			// defaults
+			var st, win = $(window)[0],
+			 body = $('body')[0],
+			 doc = (jQuery.support.boxModel) ? document.documentElement : document.body,
+			 wrap = $('#wrapper')[0],
+
+			 // Set top background image height here
+			 imgH = 1080; // top image height
+
+			// vertical parallax scroll
+			$(win).scroll(function(){
+			 st = (win.pageYOffset || doc.scrollTop );
+			 if (st < imgH) { wrap.style.backgroundPosition = 'center ' + (st/4) + 'px'; } // limit moving top image only when in view
+			 body.style.backgroundPosition = 'left ' + ( imgH + st/4) + 'px';
+			});
+		});
+	</script>
+
+</head>
+
+<body>
+
+<!--
+ **** This is not a plugin! ****
+
+It is a very basic demo of a vertical parallax that I originally posted on my blog
+http://wowmotty.blogspot.com/2011/04/vertical-parallax.html
+
+-->
+
+<div id="wrapper"> <!-- contains top image -->
+
+	<div id="header"></div> <!-- contains the page title image -->
+
+	<div class="block"> <!-- contains 55% opacity background image -->
+		<h3>Vertical Parallax Demo</h3>
+		<h4>For more details on this demo, see <a href="http://wowmotty.blogspot.com/2011/04/vertical-parallax.html">my blog post</a>.</h4>
+		<div class="content">This demo works in IE7+ and all other modern browsers.</div><br>
+		<div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus consectetur augue id ultricies. Morbi rutrum consequat mauris, facilisis laoreet metus sagittis non. Maecenas id felis vel tellus aliquet aliquet eu et orci. Vivamus sit amet neque sem, at lacinia leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec turpis sapien, vitae ornare neque. Nunc vel ipsum sed risus posuere tristique. Aliquam tristique sem eget velit accumsan faucibus. Integer varius diam nec neque eleifend sagittis. Cras nec nisl non nisl fermentum facilisis et ut odio. Donec ultricies ullamcorper augue ac rhoncus. Quisque vehicula eros ut lacus bibendum ultricies.</div>
+	</div>
+
+	<div class="block">
+		<h3>Block 2</h3>
+		<div class="content">Vestibulum id ultrices diam. Vestibulum enim nisl, feugiat eu elementum et, ullamcorper ac ligula. Donec vitae dui sem. Morbi mattis mollis enim pellentesque tristique. Aenean pretium quam a orci blandit nec imperdiet nunc pretium. Donec a libero non enim ultricies feugiat. Quisque at lectus congue felis viverra semper sit amet quis magna. Mauris ut nisl ut est feugiat rutrum ac at eros. In porttitor vestibulum diam. Aliquam vitae dui ac ipsum tempor hendrerit in sed ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pulvinar elementum enim ut pretium.</div>
+	</div>
+
+	<div class="block">
+		<h3>Block 3</h3>
+		<div class="content">Sed molestie metus ac est tristique pharetra. Vestibulum pretium molestie sapien, eget tristique purus sodales eu. Pellentesque cursus placerat tincidunt. Quisque velit lacus, pharetra sit amet viverra sed, aliquet id nisl. Vivamus ut tempus orci. Integer id ultrices dolor. Curabitur eu tellus vitae turpis ullamcorper euismod. Nunc fringilla erat id orci malesuada non sodales erat viverra. Mauris vel urna tortor. Nullam dignissim neque a arcu tempor ullamcorper. Vivamus eleifend accumsan orci, non blandit libero consectetur a. Vivamus volutpat accumsan ante, condimentum cursus diam auctor quis.</div>
+	</div>
+
+	<div class="block">
+		<h3>Block 4</h3>
+		<div class="content">Nunc ut ligula nec arcu lobortis elementum. In hac habitasse platea dictumst. Proin gravida, urna ut ornare tincidunt, augue leo porttitor lorem, quis facilisis lacus libero in neque. Ut sit amet fringilla est. Nam dapibus ligula eget justo semper vulputate. In hac habitasse platea dictumst. In faucibus egestas lectus at dictum. Etiam gravida mattis hendrerit. Donec fringilla ultrices vestibulum. Phasellus id massa nibh, et egestas erat. Cras volutpat ante eu lacus tincidunt vel vehicula lacus molestie. Nulla non volutpat neque. Phasellus eu consectetur quam. In hac habitasse platea dictumst. Vestibulum in velit justo. Vestibulum pellentesque, arcu a blandit faucibus, elit lacus porta nulla, in consectetur orci lectus in ipsum. In eu mattis nunc. Donec venenatis lobortis nisi quis laoreet. Nullam neque sem, euismod id sagittis nec, aliquet a ante. In vulputate, purus quis fringilla bibendum, sapien felis ornare risus, eu lobortis turpis lacus eu dolor.</div>
+	</div>
+
+	<div class="block">
+		<h3>Block 5</h3>
+		<div class="content">Sed ullamcorper lectus vitae sem aliquam vitae tempus magna sodales. Curabitur venenatis tellus in velit condimentum venenatis. Aenean ac orci quis risus tincidunt imperdiet nec at dui. Nullam aliquet mattis nulla, vitae ultrices erat condimentum blandit. Nullam facilisis lectus eget ligula aliquet ut sodales eros placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi urna tortor, auctor quis condimentum eu, vehicula rutrum elit. Cras ut nulla sit amet libero tristique tristique rhoncus ut ipsum. Curabitur mattis sapien eget nisi molestie rhoncus. Donec tincidunt ligula ut sem euismod sagittis. Praesent ac elit mi, ut pretium massa. Suspendisse dictum, nunc nec commodo hendrerit, ante arcu vestibulum libero, vel egestas leo dolor sit amet turpis. Nulla vel ipsum a libero lobortis hendrerit. Integer sed convallis augue. Quisque sodales dapibus accumsan. Mauris in ligula accumsan enim fringilla consectetur. Ut blandit lorem at tellus tempus tempor. Curabitur massa nulla, consectetur vel porttitor eget, imperdiet non velit. Sed mi mi, elementum non dictum molestie, placerat quis mi.</div>
+	</div>
+
+</div>
+
+</body>
+</html>
